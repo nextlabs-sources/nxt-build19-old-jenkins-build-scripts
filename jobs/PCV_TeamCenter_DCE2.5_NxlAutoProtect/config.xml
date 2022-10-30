@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Build PCV version of TC DCE 2.5 NxlAutoProtect component&#xd;
+&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- builds code from &lt;a target=&quot;_blank&quot; href=&quot;https://bitbucket.org/nxtlbs-devops/teamcenterdce&quot;&gt;Teamcenter_DCE&lt;/a&gt; Bitbucket repository</description>
+  <logRotator>
+    <daysToKeep>30</daysToKeep>
+    <numToKeep>20</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <createdBy>lkrishnan</createdBy>
+  <creationTime>1459517589530</creationTime>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM">
+    <configVersion>1</configVersion>
+    <remoteRepositories>
+      <RemoteConfig>
+        <name>origin</name>
+        <uris>
+          <org.eclipse.jgit.transport.URIish>
+            <path>nxtlbs-devops/teamcenterdce.git</path>
+            <user>git</user>
+            <port>-1</port>
+            <host>bitbucket.org</host>
+          </org.eclipse.jgit.transport.URIish>
+        </uris>
+        <pushURIs/>
+        <fetch>
+          <org.eclipse.jgit.transport.RefSpec>
+            <force>true</force>
+            <wildcard>true</wildcard>
+            <srcName>refs/heads/*</srcName>
+            <dstName>refs/remotes/origin/*</dstName>
+          </org.eclipse.jgit.transport.RefSpec>
+        </fetch>
+        <push/>
+        <uploadpack>git-upload-pack</uploadpack>
+        <receivepack>git-receive-pack</receivepack>
+        <tagopt>AUTO_FOLLOW</tagopt>
+        <mirror>false</mirror>
+        <timeout>0</timeout>
+        <relativeTargetDir></relativeTargetDir>
+      </RemoteConfig>
+    </remoteRepositories>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>origin/dev/TeamcenterDRM_2.5_1603</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <mergeOptions/>
+    <recursiveSubmodules>false</recursiveSubmodules>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <authorOrCommitter>false</authorOrCommitter>
+    <clean>true</clean>
+    <wipeOutWorkspace>false</wipeOutWorkspace>
+    <pruneBranches>false</pruneBranches>
+    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+    <gitTool>Default</gitTool>
+    <submoduleCfg class="list"/>
+    <includedRegions></includedRegions>
+    <excludedRegions></excludedRegions>
+    <excludedUsers></excludedUsers>
+    <gitConfigName>NextLabs Build Operator</gitConfigName>
+    <gitConfigEmail>build-admin@nextlabs.com</gitConfigEmail>
+    <skipTag>false</skipTag>
+  </scm>
+  <advancedAffinityChooser>false</advancedAffinityChooser>
+  <canRoam>true</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.SCMTrigger>
+      <spec>15 * * * *</spec>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <cleanWorkspaceRequired>false</cleanWorkspaceRequired>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>export NLPROJECTROOT=${WORKSPACE}
+export NLEXTERNALDIR=C:/P4/external
+
+cd ${WORKSPACE}/NxlAutoProtect/main
+source ./setEnv
+./buildDev</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer>
+      <recipients>build-admin@nextlabs.com Chenwei.Low@nextlabs.com Jim.Jin@nextlabs.com Gavin.Chen@nextlabs.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers/>
+</project>

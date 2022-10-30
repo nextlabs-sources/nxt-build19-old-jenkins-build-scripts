@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Build SharePoint Enforcer from //depot/SharePointEnforcer/release/mr1503_7.1.3.2&#xd;
+&lt;br&gt;Disabled on 16th April 2015 on Tonny&apos;s email request dated Thu 4/16/2015 2:53 PM</description>
+  <keepDependencies>false</keepDependencies>
+  <createdBy>psahi</createdBy>
+  <creationTime>1426735422343</creationTime>
+  <properties/>
+  <scm class="hudson.plugins.perforce.PerforceSCM">
+    <configVersion>0</configVersion>
+    <p4User>nxbuild</p4User>
+    <p4Passwd>0f0kqlwaxhEd4Z67fGvDTRFHyxR8/A==</p4Passwd>
+    <p4Port>nxt-p4s02.nextlabs.com:1666</p4Port>
+    <p4Client>hudson_nb19_release_spe_7.1.3.2</p4Client>
+    <projectPath>//depot/SharePointEnforcer/release/mr1503_7.1.3.2/... //default/...</projectPath>
+    <projectOptions>noallwrite clobber nocompress unlocked nomodtime rmdir</projectOptions>
+    <clientOwner></clientOwner>
+    <p4SysDrive>C:\</p4SysDrive>
+    <p4SysRoot>C:\Windows</p4SysRoot>
+    <p4Tool>C:\Program Files\Perforce\p4.exe</p4Tool>
+    <useClientSpec>false</useClientSpec>
+    <useStreamDepot>false</useStreamDepot>
+    <forceSync>false</forceSync>
+    <alwaysForceSync>true</alwaysForceSync>
+    <dontUpdateServer>false</dontUpdateServer>
+    <disableAutoSync>false</disableAutoSync>
+    <disableSyncOnly>false</disableSyncOnly>
+    <showIntegChanges>false</showIntegChanges>
+    <useOldClientName>false</useOldClientName>
+    <createWorkspace>true</createWorkspace>
+    <updateView>true</updateView>
+    <dontRenameClient>false</dontRenameClient>
+    <updateCounterValue>false</updateCounterValue>
+    <dontUpdateClient>false</dontUpdateClient>
+    <exposeP4Passwd>false</exposeP4Passwd>
+    <wipeBeforeBuild>true</wipeBeforeBuild>
+    <quickCleanBeforeBuild>false</quickCleanBeforeBuild>
+    <restoreChangedDeletedFiles>false</restoreChangedDeletedFiles>
+    <wipeRepoBeforeBuild>false</wipeRepoBeforeBuild>
+    <firstChange>-1</firstChange>
+    <fileLimit>0</fileLimit>
+    <excludedFilesCaseSensitivity>true</excludedFilesCaseSensitivity>
+    <slaveClientNameFormat>${basename}-${hash}</slaveClientNameFormat>
+    <lineEndValue>unix</lineEndValue>
+    <useViewMask>false</useViewMask>
+    <useViewMaskForPolling>false</useViewMaskForPolling>
+    <useViewMaskForSyncing>false</useViewMaskForSyncing>
+    <pollOnlyOnMaster>false</pollOnlyOnMaster>
+  </scm>
+  <advancedAffinityChooser>false</advancedAffinityChooser>
+  <canRoam>true</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector"/>
+  <concurrentBuild>false</concurrentBuild>
+  <cleanWorkspaceRequired>false</cleanWorkspaceRequired>
+  <builders>
+    <hudson.tasks.Shell>
+      <command># export NLEXTERNALDIR=C:/hudson/jobs/source_external/workspace
+export NLEXTERNALDIR=C:/P4/external
+export XLIB_FATE_SRC_TREE_ROOT=c:/hudson/jobs/source_fate_release_5_5_4/workspace
+cd $WORKSPACE
+source ./setEnv
+./buildRelease</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer>
+      <recipients>hudson-build@nextlabs.com jim.jin@cn.nextlabs.com jerry.huang@cn.nextlabs.com</recipients>
+      <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+    <hudson.plugins.perforce.PerforceTagNotifier>
+      <rawLabelName>${BUILD_TAG}</rawLabelName>
+      <rawLabelOwner></rawLabelOwner>
+      <rawLabelDesc></rawLabelDesc>
+      <onlyOnSuccess>true</onlyOnSuccess>
+    </hudson.plugins.perforce.PerforceTagNotifier>
+  </publishers>
+  <buildWrappers/>
+</project>

@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <version>2.1.2</version>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>hudson.model.Computer.Configure:admin</permission>
+    <permission>hudson.model.Computer.Delete:admin</permission>
+    <permission>hudson.model.Hudson.Administer:admin</permission>
+    <permission>hudson.model.Hudson.Read:admin</permission>
+    <permission>hudson.model.Hudson.Read:anonymous</permission>
+    <permission>hudson.model.Hudson.Read:installer</permission>
+    <permission>hudson.model.Item.Build:admin</permission>
+    <permission>hudson.model.Item.Build:anonymous</permission>
+    <permission>hudson.model.Item.Build:installer</permission>
+    <permission>hudson.model.Item.Configure:admin</permission>
+    <permission>hudson.model.Item.Configure:installer</permission>
+    <permission>hudson.model.Item.Create:admin</permission>
+    <permission>hudson.model.Item.Create:installer</permission>
+    <permission>hudson.model.Item.Delete:admin</permission>
+    <permission>hudson.model.Item.Delete:installer</permission>
+    <permission>hudson.model.Item.Read:admin</permission>
+    <permission>hudson.model.Item.Read:anonymous</permission>
+    <permission>hudson.model.Item.Read:installer</permission>
+    <permission>hudson.model.Item.Workspace:admin</permission>
+    <permission>hudson.model.Run.Delete:admin</permission>
+    <permission>hudson.model.Run.Delete:installer</permission>
+    <permission>hudson.model.Run.Update:admin</permission>
+    <permission>hudson.model.Run.Update:installer</permission>
+    <permission>hudson.model.View.Configure:admin</permission>
+    <permission>hudson.model.View.Create:admin</permission>
+    <permission>hudson.model.View.Delete:admin</permission>
+    <permission>hudson.scm.SCM.Tag:admin</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.LegacySecurityRealm"/>
+  <systemMessage>NextLabs PCV Build VM nxt-build14</systemMessage>
+  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter"/>
+  <configuredWorkspaceRoot></configuredWorkspaceRoot>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <slaves/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>All</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+    </hudson.model.AllView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>SAPCert</name>
+      <description>NextLabs PCV Build VM nxt-build14 (SAP Certification)</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>pcv_endpoint_5_6_0_501_pc_Veracode_1109</string>
+        <string>pcv_pcwsa_5_6_0_501_Veracode_base_pc5_6_1109</string>
+        <string>veracode_submit_endpoint_5_6_0_501_SAPCert_1108</string>
+        <string>veracode_submit_pcwsa_5_6_0_501_SAPCert_1109</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Misc</name>
+      <description>NextLabs PCV Build VM nxt-build14 (Miscellaneous)</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>maintenance_hudson_configuration_backup</string>
+        <string>source_external</string>
+        <string>source_fate_main</string>
+        <string>source_fate_release_5_5_4</string>
+        <string>source_fate_release_5_5_5</string>
+        <string>source_fate_release_5_5_6</string>
+        <string>source_fate_release_5_5_7</string>
+        <string>source_main_external</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>pcv-active</name>
+      <description>NextLabs PCV Build VM nxt-build14 (Features Under Development)</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>pcv_endpoint_6_0_0_509_roubaix_office_pep_1201</string>
+        <string>pcv_endpoint_6_0_0_515_roubaix_se_inheritance_1204</string>
+        <string>pcv_endpoint_6_0_0_517_roubaix_se_header_1204</string>
+        <string>pcv_endpoint_6_0_0_520_roubaix_nxl_ifilter_1205</string>
+        <string>pcv_endpoint_6_0_0_524_javasdk_1206</string>
+        <string>pcv_endpoint_6_0_0_600_roubaix_async_op_1201</string>
+        <string>pcv_endpoint_6_0_0_601_roubaix_adobe_pep_1201</string>
+        <string>pcv_endpoint_6_1_0_525_ie9_1207</string>
+        <string>pcv_karma_rms_6_0_0_513_roubaix_1204</string>
+        <string>pcv_spe_6_0_0_511_roubaix_perf_1203</string>
+        <string>pcv_spe_6_0_0_512_roubaix_rms_1203</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <includeRegex>pcv_endpoint_*</includeRegex>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>pcv-retired</name>
+      <description>NextLabs PCV Build VM nxt-build14 (Features that are PCV Completed)</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[3]/jobNames/comparator"/>
+        <string>pcv_endpoint_5_5_0_502_roubaix_RDE_OCE_LME_tag_overlay_1110</string>
+        <string>pcv_endpoint_5_5_5_0_SiriusR2_AutoWrap_1108</string>
+        <string>pcv_endpoint_5_5_6_0_SiriusR2_Office2010_1108</string>
+        <string>pcv_endpoint_5_6_0_501_pc_Veracode_1109</string>
+        <string>pcv_endpoint_6_0_0_504_roubaix_clean_code_1111</string>
+        <string>pcv_endpoint_6_0_0_508_roubaix_save_as_1201</string>
+        <string>pcv_endpoint_6_0_0_510_roubaix_oe_perf_1201</string>
+        <string>pcv_endpoint_6_0_0_514_roubaix_installer_1204</string>
+        <string>pcv_endpoint_6_0_0_516_roubaix_se_duptag_1204</string>
+        <string>pcv_endpoint_6_0_0_518_roubaix_taglib_1204</string>
+        <string>pcv_endpoint_6_0_0_519_roubaix_se_goldtag_1204</string>
+        <string>pcv_karma_rms_5_5_0_507_rome_1201</string>
+        <string>pcv_pcwsa_5_6_0_501_Veracode_base_pc5_6_1109</string>
+        <string>pcv_spe_poc_adfs_group_claim_1202</string>
+        <string>pcv_spe_SiriusR2_SPE2007_5_5_1_1102</string>
+        <string>pcv_spe_SPE2010_5_5_1_vpn_1111</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+  </views>
+  <primaryView>pcv-active</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label></label>
+  <nodeProperties/>
+  <globalNodeProperties/>
+  <disabledAdministrativeMonitors/>
+</hudson>

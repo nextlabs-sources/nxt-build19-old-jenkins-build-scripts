@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jvnet.hudson.plugins.thinbackup.ThinBackupPluginImpl>
+  <fullBackupSchedule>0 2 * * *</fullBackupSchedule>
+  <diffBackupSchedule>0 10 * * 6</diffBackupSchedule>
+  <backupPath>C:\hudson\backup</backupPath>
+  <nrMaxStoredFull>2</nrMaxStoredFull>
+  <cleanupDiff>true</cleanupDiff>
+</org.jvnet.hudson.plugins.thinbackup.ThinBackupPluginImpl>

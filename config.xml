@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <version>2.1.2</version>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.ProjectMatrixAuthorizationStrategy">
+    <permission>hudson.model.Computer.Configure:hudson-admin</permission>
+    <permission>hudson.model.Computer.Delete:hudson-admin</permission>
+    <permission>hudson.model.Hudson.Administer:hudson-admin</permission>
+    <permission>hudson.model.Hudson.Read:hudson-admin</permission>
+    <permission>hudson.model.Hudson.Read:hudson-pcv</permission>
+    <permission>hudson.model.Hudson.Read:hudson-release</permission>
+    <permission>hudson.model.Hudson.Read:tchen</permission>
+    <permission>hudson.model.Item.Build:hudson-admin</permission>
+    <permission>hudson.model.Item.Build:hudson-pcv</permission>
+    <permission>hudson.model.Item.Build:hudson-release</permission>
+    <permission>hudson.model.Item.Configure:hudson-admin</permission>
+    <permission>hudson.model.Item.Create:hudson-admin</permission>
+    <permission>hudson.model.Item.Delete:hudson-admin</permission>
+    <permission>hudson.model.Item.Read:hudson-admin</permission>
+    <permission>hudson.model.Item.Read:hudson-pcv</permission>
+    <permission>hudson.model.Item.Read:hudson-release</permission>
+    <permission>hudson.model.Item.Workspace:hudson-admin</permission>
+    <permission>hudson.model.Run.Delete:hudson-admin</permission>
+    <permission>hudson.model.Run.Update:hudson-admin</permission>
+    <permission>hudson.model.View.Configure:hudson-admin</permission>
+    <permission>hudson.model.View.Create:hudson-admin</permission>
+    <permission>hudson.model.View.Delete:hudson-admin</permission>
+    <permission>hudson.scm.SCM.Tag:hudson-admin</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.plugins.active_directory.ActiveDirectorySecurityRealm">
+    <bindPassword>AZZQ1NXieI4BDC0771h5UQ==</bindPassword>
+  </securityRealm>
+  <systemMessage>NextLabs SPE Build VM nxt-build19</systemMessage>
+  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter"/>
+  <configuredWorkspaceRoot></configuredWorkspaceRoot>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <slaves/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>All</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+    </hudson.model.AllView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Misc</name>
+      <description>NextLabs PCV Build VM nxt-build14 (Miscellaneous)</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>source_external</string>
+        <string>source_fate_main</string>
+        <string>source_fate_release_5_5_4</string>
+        <string>source_fate_release_5_5_5</string>
+        <string>source_fate_release_5_5_6</string>
+        <string>source_fate_release_5_5_7</string>
+        <string>source_main_external</string>
+        <string>source_proserv_buildcommon</string>
+        <string>test_email</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Amber</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>pcv_endpoint_amber_621_OE_Outlook2013_1406</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>SPE release</name>
+      <description>SPE release builds. These jobs should be kept forever.</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>release_spe_7.1.3</string>
+        <string>release_spe_lam_1504_7.1.3.2</string>
+        <string>release_spe_lam_1504_7.1.3.2.1</string>
+        <string>release_spe_lam_7.1.3.2</string>
+        <string>release_spe_lam_7.1.5</string>
+        <string>release_spe_lam_7.1.5.1</string>
+        <string>release_spe_main2015</string>
+        <string>release_spe_nist_1506_7.1.3.3</string>
+        <string>release_spe_PWC_1510_7.1.3.4</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <includeRegex>release_spe_.*</includeRegex>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>SPE pcv</name>
+      <description>SPE PCV builds. These jobs should be retired after a release is completed.</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[3]/jobNames/comparator"/>
+        <string>pcv_spe_7.1.3_vcc</string>
+        <string>pcv_spe_7.2_1406</string>
+        <string>pcv_spe_7.2_1409</string>
+        <string>pcv_spe_7.5_1501</string>
+        <string>PCV_TeamCenter_DCE_Translator_1_0_0_0</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <includeRegex>pcv_spe_.*</includeRegex>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>TeamCenter PCV</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[3]/jobNames/comparator"/>
+        <string>PCV_TeamCenter_DCE2.0_DCE</string>
+        <string>PCV_TeamCenter_DCE2.0_MenuItem</string>
+        <string>PCV_TeamCenter_DCE2.0_NxlAutoProtect</string>
+        <string>PCV_TeamCenter_DCE2.0_TCLdifGenerator</string>
+        <string>PCV_TeamCenter_DCE2.0_ToNxlFile</string>
+        <string>PCV_TeamCenter_DCE2.0_Translator</string>
+        <string>PCV_TeamCenter_DCE_DRM_1.5_DCE</string>
+        <string>PCV_TeamCenter_DCE_DRM_1.5_MenuItem</string>
+        <string>PCV_TeamCenter_DCE_DRM_1.5_NxlAutoProtect</string>
+        <string>PCV_TeamCenter_DCE_DRM_1.5_TCLdifGenerator</string>
+        <string>PCV_TeamCenter_DCE_DRM_1.5_ToNxlFile</string>
+        <string>PCV_TeamCenter_DCE_DRM_1.5_Translator</string>
+        <string>PCV_TeamCenter_DCE_Translator_1_0_0_0</string>
+        <string>PCV_TeamCenter_DocumentControlExtension_1_0_0_0</string>
+        <string>PCV_TeamCenter_MenuItem_1_0_0_0</string>
+        <string>PCV_TeamCenter_ToNxlFile_1_0_0_0</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Teamcenter release</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Release_TeamCenter_DCE2.0_DCE</string>
+        <string>Release_TeamCenter_DCE2.0_MenuItem</string>
+        <string>Release_TeamCenter_DCE2.0_NxlAutoProtect</string>
+        <string>Release_TeamCenter_DCE2.0_TCLdifGenerator</string>
+        <string>Release_TeamCenter_DCE2.0_ToNxlFile</string>
+        <string>Release_TeamCenter_DCE2.0_Translator</string>
+        <string>release_TeamCenter_DCE2.5.1_mr_NxlAutoProtect</string>
+        <string>release_TeamCenter_DCE2.5_AWCOneStepCommands</string>
+        <string>release_TeamCenter_DCE2.5_DCE</string>
+        <string>release_TeamCenter_DCE2.5_MenuItem</string>
+        <string>release_TeamCenter_DCE2.5_NxlAutoProtect</string>
+        <string>release_TeamCenter_DCE2.5_TCLdifGenerator</string>
+        <string>release_TeamCenter_DCE2.5_ToNxlFile</string>
+        <string>release_TeamCenter_DCE2.5_Translator</string>
+        <string>release_TeamCenter_DCE2.6_AWCOneStepCommands</string>
+        <string>release_TeamCenter_DCE2.6_DCE</string>
+        <string>release_TeamCenter_DCE2.6_MenuItem</string>
+        <string>release_TeamCenter_DCE2.6_NxlAutoProtect</string>
+        <string>release_TeamCenter_DCE2.6_TCLdifGenerator</string>
+        <string>release_TeamCenter_DCE2.6_ToNxlFile</string>
+        <string>release_TeamCenter_DCE2.6_Translator</string>
+        <string>release_TeamCenter_DCE_DRM_1.5_DCE</string>
+        <string>release_TeamCenter_DCE_DRM_1.5_MenuItem</string>
+        <string>release_TeamCenter_DCE_DRM_1.5_NxlAutoProtect</string>
+        <string>release_TeamCenter_DCE_DRM_1.5_TCLdifGenerator</string>
+        <string>release_TeamCenter_DCE_DRM_1.5_ToNxlFile</string>
+        <string>release_TeamCenter_DCE_DRM_1.5_Translator</string>
+        <string>Release_TeamCenter_DCE_Translator_1_0_0_0</string>
+        <string>Release_TeamCenter_DocumentControlExtension_1_0_0_0</string>
+        <string>Release_TeamCenter_MenuItem_1_0_0_0</string>
+        <string>Release_TeamCenter_ToNxlFile_1_0_0_0</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Teamcenter_DCE_2.5</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>PCV_TeamCenter_DCE2.5_AWCOneStepCommands</string>
+        <string>PCV_TeamCenter_DCE2.5_DCE</string>
+        <string>PCV_TeamCenter_DCE2.5_MenuItem</string>
+        <string>PCV_TeamCenter_DCE2.5_NxlAutoProtect</string>
+        <string>PCV_TeamCenter_DCE2.5_TCLdifGenerator</string>
+        <string>PCV_TeamCenter_DCE2.5_ToNxlFile</string>
+        <string>PCV_TeamCenter_DCE2.5_Translator</string>
+        <string>release_TeamCenter_DCE2.5.1_mr_NxlAutoProtect</string>
+        <string>release_TeamCenter_DCE2.5_AWCOneStepCommands</string>
+        <string>release_TeamCenter_DCE2.5_DCE</string>
+        <string>release_TeamCenter_DCE2.5_MenuItem</string>
+        <string>release_TeamCenter_DCE2.5_NxlAutoProtect</string>
+        <string>release_TeamCenter_DCE2.5_TCLdifGenerator</string>
+        <string>release_TeamCenter_DCE2.5_ToNxlFile</string>
+        <string>release_TeamCenter_DCE2.5_Translator</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <includeRegex>PCV_TeamCenter_DCE2.5*</includeRegex>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Teamcenter_DCE_2.6</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[7]/jobNames/comparator"/>
+        <string>release_TeamCenter_DCE2.6_AWCOneStepCommands</string>
+        <string>release_TeamCenter_DCE2.6_DCE</string>
+        <string>release_TeamCenter_DCE2.6_MenuItem</string>
+        <string>release_TeamCenter_DCE2.6_NxlAutoProtect</string>
+        <string>release_TeamCenter_DCE2.6_TCLdifGenerator</string>
+        <string>release_TeamCenter_DCE2.6_ToNxlFile</string>
+        <string>release_TeamCenter_DCE2.6_Translator</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.ConsoleColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+    </listView>
+  </views>
+  <primaryView>SPE pcv</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label></label>
+  <nodeProperties/>
+  <globalNodeProperties/>
+  <disabledAdministrativeMonitors/>
+</hudson>

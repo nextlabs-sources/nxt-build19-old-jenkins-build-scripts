@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>THIS BUILD HAS BEEN DISABLED BECAUSE A NEW BUILD HAS BEEN SETUP IN http://nxt-build15.nextlabs.com:9031&#xd;
+&lt;br&gt;This job builds PCV version of SPE7.5 from //depot/SharePointEnforcer/dev/spe_7.5_1501</description>
+  <logRotator>
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>15</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <createdBy>lkrishnan</createdBy>
+  <creationTime>1428472197805</creationTime>
+  <properties/>
+  <scm class="hudson.plugins.perforce.PerforceSCM">
+    <configVersion>0</configVersion>
+    <p4User>nxbuild</p4User>
+    <p4Passwd>0f0kqlwaxhEd4Z67fGvDTRFHyxR8/A==</p4Passwd>
+    <p4Port>nxt-p4s02.nextlabs.com:1666</p4Port>
+    <p4Client>hudson_nb19_pcv_spe_7.5_1501</p4Client>
+    <projectPath>//depot/SharePointEnforcer/dev/spe_7.5_1501/... //default/...</projectPath>
+    <projectOptions>noallwrite clobber nocompress unlocked nomodtime rmdir</projectOptions>
+    <p4SysDrive>C:\</p4SysDrive>
+    <p4SysRoot>C:\Windows</p4SysRoot>
+    <p4Tool>C:\Program Files\Perforce\p4.exe</p4Tool>
+    <useClientSpec>false</useClientSpec>
+    <useStreamDepot>false</useStreamDepot>
+    <forceSync>false</forceSync>
+    <alwaysForceSync>true</alwaysForceSync>
+    <dontUpdateServer>false</dontUpdateServer>
+    <disableAutoSync>false</disableAutoSync>
+    <disableSyncOnly>false</disableSyncOnly>
+    <showIntegChanges>false</showIntegChanges>
+    <useOldClientName>false</useOldClientName>
+    <createWorkspace>true</createWorkspace>
+    <updateView>true</updateView>
+    <dontRenameClient>false</dontRenameClient>
+    <updateCounterValue>false</updateCounterValue>
+    <dontUpdateClient>false</dontUpdateClient>
+    <exposeP4Passwd>false</exposeP4Passwd>
+    <wipeBeforeBuild>true</wipeBeforeBuild>
+    <quickCleanBeforeBuild>false</quickCleanBeforeBuild>
+    <restoreChangedDeletedFiles>true</restoreChangedDeletedFiles>
+    <wipeRepoBeforeBuild>false</wipeRepoBeforeBuild>
+    <firstChange>0</firstChange>
+    <fileLimit>0</fileLimit>
+    <excludedFilesCaseSensitivity>true</excludedFilesCaseSensitivity>
+    <slaveClientNameFormat>${basename}-${hash}</slaveClientNameFormat>
+    <lineEndValue>unix</lineEndValue>
+    <useViewMask>false</useViewMask>
+    <useViewMaskForPolling>false</useViewMaskForPolling>
+    <useViewMaskForSyncing>false</useViewMaskForSyncing>
+    <pollOnlyOnMaster>false</pollOnlyOnMaster>
+  </scm>
+  <advancedAffinityChooser>false</advancedAffinityChooser>
+  <canRoam>true</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.SCMTrigger>
+      <spec>15 * * * *</spec>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <cleanWorkspaceRequired>true</cleanWorkspaceRequired>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>export NLEXTERNALDIR=C:/P4/external
+export XLIB_FATE_SRC_TREE_ROOT=C:/hudson/jobs/source_fate_release_5_5_4/workspace
+export VERSION_BUILD=${BUILD_NUMBER}
+cd $WORKSPACE
+source setEnv
+
+# source C:/vs2010_vsvars32.sh
+./buildPcv</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer>
+      <recipients>hudson-build@nextlabs.com jim.jin@cn.nextlabs.com jerry.huang@cn.nextlabs.com Daniel.Chen@cn.nextlabs.com Tonny.He@cn.nextlabs.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+    <hudson.plugins.perforce.PerforceTagNotifier>
+      <rawLabelName>${BUILD_TAG}</rawLabelName>
+      <rawLabelOwner></rawLabelOwner>
+      <rawLabelDesc></rawLabelDesc>
+      <onlyOnSuccess>true</onlyOnSuccess>
+    </hudson.plugins.perforce.PerforceTagNotifier>
+  </publishers>
+  <buildWrappers/>
+</project>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator>
+    <daysToKeep>30</daysToKeep>
+    <numToKeep>100</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <createdBy>ichiang</createdBy>
+  <creationTime>1413837937787</creationTime>
+  <properties/>
+  <scm class="hudson.plugins.perforce.PerforceSCM">
+    <configVersion>0</configVersion>
+    <p4User>nxbuild</p4User>
+    <p4Passwd>0f0kqlwaxhEd4Z67fGvDTRFHyxR8/A==</p4Passwd>
+    <p4Port>nxt-p4s02.nextlabs.com:1666</p4Port>
+    <p4Client>hudson_nb19_PCV_TeamCenter_DocumentControlExtension_1_0_0_0</p4Client>
+    <projectPath>//depot/Teamcenter_DCE/DocumentControlExtension/main/... //default/...</projectPath>
+    <projectOptions>noallwrite clobber nocompress unlocked nomodtime rmdir</projectOptions>
+    <clientOwner></clientOwner>
+    <p4SysDrive>C:\</p4SysDrive>
+    <p4SysRoot>C:\Windows</p4SysRoot>
+    <p4Tool>C:\Program Files\Perforce\p4.exe</p4Tool>
+    <useClientSpec>false</useClientSpec>
+    <useStreamDepot>false</useStreamDepot>
+    <forceSync>false</forceSync>
+    <alwaysForceSync>true</alwaysForceSync>
+    <dontUpdateServer>false</dontUpdateServer>
+    <disableAutoSync>false</disableAutoSync>
+    <disableSyncOnly>false</disableSyncOnly>
+    <showIntegChanges>false</showIntegChanges>
+    <useOldClientName>false</useOldClientName>
+    <createWorkspace>true</createWorkspace>
+    <updateView>true</updateView>
+    <dontRenameClient>false</dontRenameClient>
+    <updateCounterValue>false</updateCounterValue>
+    <dontUpdateClient>false</dontUpdateClient>
+    <exposeP4Passwd>false</exposeP4Passwd>
+    <wipeBeforeBuild>true</wipeBeforeBuild>
+    <quickCleanBeforeBuild>false</quickCleanBeforeBuild>
+    <restoreChangedDeletedFiles>false</restoreChangedDeletedFiles>
+    <wipeRepoBeforeBuild>false</wipeRepoBeforeBuild>
+    <firstChange>-1</firstChange>
+    <fileLimit>0</fileLimit>
+    <excludedFilesCaseSensitivity>true</excludedFilesCaseSensitivity>
+    <slaveClientNameFormat>${basename}-${hash}</slaveClientNameFormat>
+    <lineEndValue>unix</lineEndValue>
+    <useViewMask>false</useViewMask>
+    <useViewMaskForPolling>false</useViewMaskForPolling>
+    <useViewMaskForSyncing>false</useViewMaskForSyncing>
+    <pollOnlyOnMaster>false</pollOnlyOnMaster>
+  </scm>
+  <advancedAffinityChooser>false</advancedAffinityChooser>
+  <canRoam>true</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.SCMTrigger>
+      <spec>1 5 * * *</spec>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <cleanWorkspaceRequired>false</cleanWorkspaceRequired>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>export NLPROJECTROOT=C:/hudson/jobs/pcv_teamcenter_dce_1.0/DocumentControlExtension/workspace
+# export NLEXTERNALDIR=C:/hudson/jobs/source_external/workspace
+export NLEXTERNALDIR=C:/P4/external
+export TC_REPOSITORY_ROOT=s:/build/pcv/Teamcenter/DocumentControlExtension
+cd $WORKSPACE
+source setEnv
+./buildPCV</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer>
+      <recipients>build-admin@nextlabs.com Chenwei.Low@nextlabs.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+    <hudson.plugins.perforce.PerforceTagNotifier>
+      <rawLabelName>${BUILD_TAG}</rawLabelName>
+      <onlyOnSuccess>true</onlyOnSuccess>
+    </hudson.plugins.perforce.PerforceTagNotifier>
+  </publishers>
+  <buildWrappers/>
+</project>

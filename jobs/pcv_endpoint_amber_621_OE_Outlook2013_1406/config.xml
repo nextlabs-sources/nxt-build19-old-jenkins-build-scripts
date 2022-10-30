@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <logRotator>
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>30</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <createdBy>njilla</createdBy>
+  <creationTime>1409769147373</creationTime>
+  <properties/>
+  <scm class="hudson.plugins.perforce.PerforceSCM">
+    <p4User>nxbuild</p4User>
+    <p4Passwd>0f0kqlwaxhEd4Z67fGvDTRFHyxR8/A==</p4Passwd>
+    <p4Port>nxt-p4s02.nextlabs.com:1666</p4Port>
+    <p4Client>hudson_nb14_pcv_endpoint_amber_621_OE_Outlook2013_1406</p4Client>
+    <projectPath>//depot/Fate/dev/Amber_OE_Outlook2013_1406/... //default/...</projectPath>
+    <projectOptions>noallwrite clobber nocompress unlocked nomodtime rmdir</projectOptions>
+    <p4Exe>C:\Program Files\Perforce\p4.exe</p4Exe>
+    <p4SysDrive>C:\</p4SysDrive>
+    <p4SysRoot>C:\Windows</p4SysRoot>
+    <useClientSpec>false</useClientSpec>
+    <forceSync>false</forceSync>
+    <alwaysForceSync>true</alwaysForceSync>
+    <dontUpdateServer>false</dontUpdateServer>
+    <disableAutoSync>false</disableAutoSync>
+    <disableSyncOnly>false</disableSyncOnly>
+    <useOldClientName>false</useOldClientName>
+    <updateView>true</updateView>
+    <dontRenameClient>false</dontRenameClient>
+    <updateCounterValue>false</updateCounterValue>
+    <dontUpdateClient>false</dontUpdateClient>
+    <exposeP4Passwd>false</exposeP4Passwd>
+    <wipeBeforeBuild>true</wipeBeforeBuild>
+    <wipeRepoBeforeBuild>false</wipeRepoBeforeBuild>
+    <firstChange>0</firstChange>
+    <slaveClientNameFormat>${basename}-${hash}</slaveClientNameFormat>
+    <lineEndValue>unix</lineEndValue>
+    <useViewMask>false</useViewMask>
+    <useViewMaskForPolling>false</useViewMaskForPolling>
+    <useViewMaskForSyncing>false</useViewMaskForSyncing>
+    <pollOnlyOnMaster>false</pollOnlyOnMaster>
+  </scm>
+  <advancedAffinityChooser>false</advancedAffinityChooser>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector"/>
+  <concurrentBuild>false</concurrentBuild>
+  <cleanWorkspaceRequired>false</cleanWorkspaceRequired>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>export NLEXTERNALDIR=c:/hudson/jobs/source_external/workspace
+export NLEXTERNALDIR2=c:/hudson/jobs/source_main_external/workspace
+export NLCERTROOT=c:/release/bin
+export NLCERTPSWD=IiVf1itvOrqJ
+cd $WORKSPACE
+source setEnv
+./buildPcv</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer>
+      <recipients>hudson-build@nextlabs.com Allen.Yuen@nextlabs.com Gavin.Ye@nextlabs.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+    <hudson.plugins.perforce.PerforceTagNotifier>
+      <rawLabelName>${BUILD_TAG}_n14</rawLabelName>
+      <onlyOnSuccess>true</onlyOnSuccess>
+    </hudson.plugins.perforce.PerforceTagNotifier>
+  </publishers>
+  <buildWrappers/>
+</project>
